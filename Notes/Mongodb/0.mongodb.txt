@@ -1,5 +1,3 @@
-Hello Mam, this is Priyansh Sharma and today in this session I'm going to talk about Mongodb.
-
 Before Jumping into Explaining what is mongodb, I would Like to give Introduction of what is a database.
 
 So database comprises of two words - Data - base
