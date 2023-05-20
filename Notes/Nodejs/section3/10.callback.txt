@@ -1,0 +1,40 @@
+In javascript functions are first class objects.
+A function can be pass as argument to another function.
+An function can be return as value from another function.
+
+ex - 
+
+const greet = (name)=>{
+    console.log(`Hello ${name}`)
+}
+
+const higherOrderFunction = (callback)=>{
+    const name = "vishwas"
+
+    callback(name)
+}
+
+higherOrderFunction(greet)
+
+
+//* Here greetVishwas is a function which accepts another function as argumenet.
+//* Any function which is passes as argument to another function is called callback function.
+//* function which accepts function as argm and return function is Higher order function
+
+Callbackes are of two type - 
+1. Sync
+2. Async.
+
+Sync - Callback which is execute immidiatly is synv.
+
+Ex - greet here is sync callback function.
+Practical example - a callback function that passed to salt, map or filter is sync callback function.
+
+Async - A callback that is often used to continue or resume code execution after an async operation has completed.
+Most of the modules have ths nature, which stop blocking of the execiiton. API request, fetching data from DB.
+
+Ex - addEventListners('click' callback) - when user click then this function triggered.
+Hence the execution is delayed till user click.
+
+Delay the execution until some time or event is async callback.
+

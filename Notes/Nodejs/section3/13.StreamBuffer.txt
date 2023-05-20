@@ -1,0 +1,49 @@
+Stream is sqquence of data that is being moved from one point to another over time.
+
+ex - Stream of data moved from one computer to another over tume.
+Stream of data transfer from one file to orher.
+
+Idea - To Process data in chunks as they arrice instead wating for entire data availavle before processing.
+
+Example - When you open video on youtube then we don't wait for the video to get download and then we will watch it. Our video data comes in chunks and then we watch it and at the same time data keep comming in chunks, we can see the white line being processed along with red progress, that white part is representation of that chunks.
+
+We prevent lot's of downloades and memory usage.
+
+
+
+But how stream of data moves ?
+
+let say - Mela.
+Mela has roller coster.
+
+Rollar coaster has 30 seates.
+
+Scanario 1 - 
+100 people arrive.
+30 sit.
+70 in queue.
+
+Scanario 2 - 
+If 1 arive
+then he/she have to wait for 10 people. It's a guideline to start ride.
+We cannot control pace of people arrive.
+
+
+Until the buffer is not full - Nodejs will not send the data for processing.
+Nodejs cannot control the pace at which data arrive in stream.
+It cannot decide what's right time to send data for processign.
+If there is already data processed or too little data processed then nodejs puts the arriving data in buffer.
+
+Ex - Streaming video online.
+If connection is fast then our video process fast and less stream in buffer and video smoth.
+
+If connection slow then less data in buffer and buffer will fill up slowly and we will see that loading spinner.
+
+When video is playing then more data will come in buffer and keep playng.
+
+
+
+
+
+
+

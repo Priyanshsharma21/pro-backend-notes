@@ -1,0 +1,49 @@
+At time of nodejs was created there was no build in module system in js.
+ Nodejs default to commonjs as its module system.
+ES modules is ECMA script std for modules
+ In 2015 after es6, js standrized to module system as part of language, till 2015 now react is in use and it follow module system as
+
+ This is called ES module.
+
+ We use mjs file extention for es module.
+
+ In ES6 Now we can use .\
+
+
+ import add from './add'; 
+ import fs from 'fs'; 
+
+
+ in export also we can do default and name exports.
+
+ Default 
+
+ const add = (a,b)=>{
+    return a+b
+ }
+
+ const sub = (a,b)=>{
+    return a-b
+ }
+
+ export default {add,sub}
+
+
+ and then we can
+ import Math from './math.js';
+ Math.add(1,3)
+ Math.sub(1,3)
+
+
+
+ we can use name export - 
+
+ export const add = (a,b)=>{
+    return a+b
+ }
+
+ export const sub = (a,b)=>{
+    return a-b
+ }
+
+import { add, sub } from './Math.js' 

@@ -1,0 +1,10 @@
+Events module is build in module which help us to work with events.
+
+Events is an action or occerance that heppened in our app to which we can respond to.
+
+We can dispatch our custom events or respond to events using it.
+
+Ex - When we feel hungary we go to dominos - 
+we placd order - it's an event.
+Making the pizza is response to that event.
+

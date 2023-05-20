@@ -1,0 +1,24 @@
+How Web Works - 
+Computer connected to internet are called clients and servers.
+
+Client are - Internet connected devices such as (thick)computers or mobiles phones along with (thin)web browsers
+
+Servers - computer that stores web pages sites or apps.
+
+
+
+When we send request (http) from client to server then server downloads that request process it and send response to client and client show it to user.
+
+This is client server model.
+
+!But what format ?
+
+HTTP = Hyper text transfer protocol.
+This protocol defines a format for clients and server to speak to each other.
+Client sends HTTP request and server responds with HTTP response.
+
+Now in node we can make server using HTTP using HTTP library.
+Nodejs has access to OS functionality like networking.
+Node has event loop to run task async and is perfect to create web servers. and handle large volume of data.
+
+HTTP module allow us to make web server which follow HTTP to transfer data

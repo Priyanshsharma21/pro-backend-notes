@@ -1,0 +1,15 @@
+Chrome V8 Engine -
+
+1. Javascript code cannot be understand by computer.
+2. Javascript engine is a program that converts javascript code that developers write into machine code that allows a computer to perform specific tasks
+3. JS engine is made by web browser vendors like Chrome(Google)V8, Microsoft(Edge)Chakra.
+4. v8 - Open source engine developed by google.
+v8 google sits at core of nodejs and
+
+V8 is google open source JS engine
+V8 implements ECMA as specification in ECMA-262
+V8 is written in c++ and used in google chrome.
+V8 can run standalone or in c++.
+
+We can add new features in Javascript using V8 + C++
+C++ programe is Nodejs

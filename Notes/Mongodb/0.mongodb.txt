@@ -1,0 +1,106 @@
+Hello Mam, this is Priyansh Sharma and today in this session I'm going to talk about Mongodb.
+
+Before Jumping into Explaining what is mongodb, I would Like to give Introduction of what is a database.
+
+So database comprises of two words - Data - base
+Data - Building block of information. Collection of information, facts, statictics. which can be present in any type or any format.
+
+Majorly our data is present in Structur(20-30%) - which is present in particular format like rows, columns(relations) ex-> SQL - predefine schema, semistructure(30-40%) - Combination of Struct and Unstruct(HTMl, XML), unstructure(50-60%) - Not in a proper format, like Images, Videos, Files(pdf)- not have pre define schema
+
+
+- A database is a  collection of data, organized and stored in a systematic way inside a repository(physical or virtual), which is designed to be easily accessed, managed, and updated. 
+
+-It serves as a repository for storing, retrieving, and manipulating data, providing an efficient and reliable means of managing information.
+
+
+- This data can be used to analyze and extract useful informations from it which can help in taking Business Decisions and help business to grow.
+
+
+
+MongoDB is a document-oriented NoSQL database management system that is specifically designed to offer scalability, flexibility, and high performance for modern applications. 
+
+Unlike traditional relational databases, MongoDB does not store data in tables with rows and columns.
+
+Instead, it stores data in flexible, JSON-like documents, which can vary in structure and fields from one document to another. 
+
+This document-based model allows developers to store and access complex data structures in a natural and easier way.
+
+MongoDB's philosophy is to provide a scalable and distributed database system that can handle large amounts of data and high traffic loads. 
+
+It achieves this through features such as automatic sharding, which allows data to be distributed across multiple servers or clusters, ensuring efficient load balancing and horizontal scalability.
+
+Flexibility is a key aspect of MongoDB, as it allows developers to easily modify the data schema as their application evolves over time. There is no need to define a rigid schema upfront, and fields can be added or removed from documents dynamically without impacting the existing data. This flexibility makes MongoDB an ideal choice for agile development environments and rapid iteration.
+
+!Load Balancing:
+ Load balancing refers to the distribution of incoming network traffic across multiple servers or resources to prevent any single server from becoming overwhelmed. In the context of MongoDB, load balancing helps distribute the read and write operations across multiple database instances or nodes. This ensures that the workload is evenly distributed, optimizing resource utilization and improving overall performance.
+
+!Horizontal Scaling:
+ Horizontal scaling, also known as scaling out, involves adding more servers or nodes to a system to handle increased data storage requirements or traffic load. In MongoDB, horizontal scaling allows you to add additional servers or replica sets to the database cluster, effectively increasing the system's capacity and throughput. With horizontal scaling, you can accommodate more data, handle more concurrent requests, and achieve better performance as the workload grows.
+
+!Automatic Sharding:
+ Sharding is a data distribution technique used by MongoDB to horizontally partition data across multiple servers or shards. Each shard contains a subset of the data, and collectively, they form a distributed database. MongoDB's automatic sharding feature enables the system to automatically and transparently distribute the data across the shards based on a configurable shard key. It ensures that data is evenly distributed across the shards, enabling efficient query execution and parallel processing. Automatic sharding simplifies the management of the database cluster by handling the data distribution automatically, allowing developers to focus on application development rather than manual data partitioning.
+
+
+Overall, MongoDB offers a powerful and feature-rich database solution for modern applications that require scalability, flexibility, and high performance. Its document-oriented approach, distributed architecture, and optimization techniques make it well-suited for a wide range of use cases, including web applications, content management systems, real-time analytics, and more.
+
+
+
+
+
+
+
+
+
+
+
+Now let's talk about some of the features of Mogodb - 
+!Document-Oriented Approach:
+ In MongoDB, data is stored in documents, which are essentially JSON-like structures. 
+ A document represents a single entity or record and can contain key-value pairs, arrays, nested documents, and other complex data structures. 
+ Documents are self-describing, meaning they do not require a predefined schema and can have different structures or fields within the same collection.
+
+!Schema Flexibility:
+MongoDB offers schema flexibility, allowing you to work with evolving data models. 
+*You can add or remove fields from documents without affecting other documents in the collection. This flexibility is particularly beneficial for agile development environments where data requirements may change frequently.
+
+!Dynamic Queries: 
+MongoDB supports dynamic, ad-hoc queries on the data. You can perform queries using a flexible query language that supports a wide range of operations, including filtering, sorting, projection, aggregation, and more. MongoDB's query language enables developers to retrieve and manipulate data based on various criteria, making it well-suited for dynamic and real-time applications.
+
+!Indexing: 
+MongoDB provides powerful indexing capabilities to optimize query performance. Indexes can be created on single fields, compound fields, arrays, and even embedded documents. Indexing allows for efficient data retrieval by creating data structures that improve the speed of queries. MongoDB supports various types of indexes, including unique indexes, text indexes for text search capabilities, and geospatial indexes for spatial queries.
+
+!Horizontal Scalability: 
+MongoDB is designed to scale horizontally, allowing you to distribute data and traffic across multiple servers or clusters. It supports automatic sharding, which divides the data into chunks and distributes them across different shards. This enables the database to handle increased data volumes and throughput, providing better performance and allowing for seamless scaling as your application grows.
+
+!High Availability and Replication:
+MongoDB offers built-in replication features that ensure data redundancy and high availability. 
+By configuring replica sets, you can create multiple copies of your data, with one primary node and multiple secondary nodes. Replication provides automatic failover and data redundancy, enhancing the overall reliability and fault tolerance of the database.
+
+
+
+
+
+Mongoose is an Object Data Modeling (ODM) library designed for MongoDB, which provides a straightforward and convenient way to interact with MongoDB databases using JavaScript. It acts as a translation layer between the MongoDB database and the application code, offering a higher-level abstraction for data modeling and access.
+
+Mongoose simplifies the process of working with MongoDB by providing a schema-based approach to define the structure, validation rules, and behavior of data. It allows developers to define schemas for their data models, specifying the fields, data types, default values, and validation constraints. This schema definition brings structure and consistency to the data stored in MongoDB, enabling better organization and maintainability.
+
+With Mongoose, you can define models based on these schemas, representing collections in the MongoDB database. These models provide a straightforward way to perform CRUD (Create, Read, Update, Delete) operations on the database. Mongoose provides an intuitive API for creating, querying, updating, and deleting documents, abstracting away the complexities of MongoDB's native driver and query language.
+
+In addition to data modeling and basic CRUD operations, Mongoose offers additional features that enhance the MongoDB experience. These features include:
+
+Middleware and Hooks: Mongoose allows you to define pre- and post-save hooks, pre- and post-find hooks, and various other middleware functions. These hooks enable you to add additional functionality or perform operations before or after certain database operations, such as data transformation, validation, encryption, or logging.
+
+Query Building and Population: Mongoose provides a rich API for building and executing queries. It supports a flexible query syntax with methods for filtering, sorting, pagination, and aggregation. Mongoose also supports population, which allows you to automatically resolve references to other collections, avoiding the need for manual data fetching and joining.
+
+Validation and Middleware Plugins: Mongoose offers a plugin system that allows you to extend its functionality with custom validation rules, data transformation, or any other behavior you need. You can leverage existing plugins developed by the community or create your own to enhance the capabilities of Mongoose and tailor it to your specific application requirements.
+
+By using Mongoose, developers can leverage the power of MongoDB while benefiting from a simplified and expressive JavaScript-based interface. It provides an object-oriented approach to working with MongoDB, making it easier to define and manage data models, perform database operations, and add custom functionality. Mongoose is widely adopted in the Node.js ecosystem and is a popular choice for building scalable and flexible applications with MongoDB as the underlying database.
+
+
+
+
+
+Schema: A schema in Mongoose defines the structure, data types, and constraints for a MongoDB collection. It represents the blueprint for the documents that will be stored in the collection. A schema is typically defined using the Mongoose Schema class, which provides various methods to define fields, set data types, specify validation rules, and more. By defining a schema, you can enforce a specific structure for your data and ensure data consistency.
+
+
+Model: A model in Mongoose is a wrapper around a MongoDB collection. It provides an interface to interact with the documents in the collection, including CRUD operations (Create, Read, Update, Delete), querying, and more. Models are created based on a defined schema using the mongoose.model method.

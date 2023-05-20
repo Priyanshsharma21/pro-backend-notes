@@ -1,0 +1,59 @@
+Now let's explore the main concepts and properties of Flexbox:
+
+Flex Direction (flex-direction):
+
+Determines the direction of the flex items within the flex container.
+Possible values: row (default), row-reverse, column, column-reverse.
+Flex Wrap (flex-wrap):
+
+Specifies whether flex items should wrap to multiple lines if they can't fit within the container's width.
+Possible values: nowrap (default), wrap, wrap-reverse.
+Justify Content (justify-content):
+
+Defines how flex items are aligned along the main axis (horizontal axis by default) within the flex container.
+Possible values: flex-start (default), flex-end, center, space-between, space-around, space-evenly.
+Align Items (align-items):
+
+Determines how flex items are aligned along the cross axis (vertical axis by default) within the flex container.
+Possible values: stretch (default), flex-start, flex-end, center, baseline.
+Align Content (align-content):
+
+Controls the alignment of flex lines if there are multiple lines within the flex container.
+Possible values: stretch (default), flex-start, flex-end, center, space-between, space-around.
+Order (order):
+
+Specifies the order in which flex items are displayed within the flex container.
+Default value: 0. Higher values push items to the end, lower values bring them to the front.
+Flex Grow (flex-grow), Flex Shrink (flex-shrink), Flex Basis (flex-basis):
+
+These properties control how flex items grow, shrink, and establish their initial size.
+flex-grow defines the ability of an item to grow to fill the available space.
+flex-shrink determines the ability of an item to shrink if there is not enough space.
+flex-basis specifies the initial size of an item before free space is distributed.
+Here's an example that demonstrates the usage of various Flexbox properties:
+
+css
+Copy code
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  order: 2;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 200px;
+}
+html
+Copy code
+<div class="container">
+  <div class="item">Flex Item 1</div>
+  <div class="item">Flex Item 2</div>
+  <div class="item">Flex Item 3</div>
+</div>
+In this example, the .container is a flex container with a row direction. The items inside the container have an order of 2, which means they will appear after other items by default. The flex items will grow to fill the available space, won't shrink, and have an initial basis size of 200 pixels.
+
+Flex box provides a powerful and flexible way to create responsive layouts, align elements, and control their behavior. Experimenting with different Flexbox properties and combinations allows you to achieve complex layouts and responsive designs with ease.

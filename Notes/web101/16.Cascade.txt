@@ -1,0 +1,22 @@
+Cascade refers to the process by which CSS rules are applied to elements in an HTML document. The term "cascade" is used because CSS rules can be defined in multiple places (such as in external stylesheets, internal stylesheets, and inline styles) and can have different levels of specificity, and the browser must determine which rules to apply to each element based on a set of rules called the "cascade order".
+
+The cascade order is a set of rules that determines the order in which CSS rules are applied to elements. The order is as follows:
+
+Origin: The origin of the rule determines its precedence. User stylesheets have the highest priority, followed by author stylesheets, and then browser defaults.
+
+Specificity: The specificity of the rule determines how specific the selector is. More specific selectors have higher precedence than less specific selectors. Specificity is calculated based on the number and type of selectors used in a rule.
+
+Source Order: If two rules have the same origin and specificity, the last rule defined will take precedence. This is known as the "last rule wins" rule.
+
+The cascade order ensures that the correct CSS rules are applied to each element in the document, even when there are multiple conflicting rules defined for the same element.
+
+In addition to the cascade order, CSS also supports the use of the !important declaration to override the cascade order. When the !important declaration is used, the specified property value will always be applied to the element, regardless of its origin, specificity, or source order. However, the use of !important should be avoided whenever possible, as it can lead to unexpected behavior and make it difficult to maintain and update CSS styles.
+
+In summary, the cascade is the process by which CSS rules are applied to elements in an HTML document. The cascade order determines the order in which CSS rules are applied based on their origin, specificity, and source order. By understanding the cascade order and avoiding the use of !important, developers can create well-structured and maintainable CSS styles that are easy to understand and update.
+
+
+
+
+ID > Class > Element
+
+In HTML we can use Style tag inside the head and specify our internal styling

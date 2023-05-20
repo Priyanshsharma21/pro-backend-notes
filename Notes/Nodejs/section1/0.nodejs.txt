@@ -1,0 +1,97 @@
+Nodejs is open source (Anyone can contribute in it), cross platform(Can be run on any OS - independant of OS), JS runtime enviroment.
+
+Open Source - Source Code is publicly available for sharing and modification.
+
+Cross Platform - Available on Mac, Window and Linux
+
+Noedjs is Js runtine enviroment - Provides all the necessary components in order to use and run JS programe outside the browser.
+
+Event Driven
+Non Blocking I/O Model
+
+Best for handling concurrent requests and high throughput applications.
+
+Why Nodejs - 
+1. Build end to end javascript Applications - With JS we can build frintend and Backend of our app.
+2. Companies like - Linkedin, Netflix, Tiktok, Twitter, Paypal all migrate to Nodejs.
+3. Full Stack is easy with nodejs
+4. Huge Community
+
+With the help of Nodejs we can run the javascript code outside of Browser and can make server using it.
+Js is single threaded and syncronized language, using mechanism of nodejs we can perform multiple tasks parally.
+
+
+
+!JavaScript Runtime:
+ Node.js allows you to run JavaScript code outside the browser, on the server-side. It is built on the V8 JavaScript engine, which provides high-performance execution of JavaScript code.
+
+
+ !Event-Driven Architecture:
+ Node.js follows an event-driven architecture, where certain events trigger specific actions. It utilizes callbacks or event emitters to handle asynchronous operations, allowing for non-blocking and scalable applications.
+
+ !Non-Blocking I/O:
+  Node.js utilizes a non-blocking I/O model, which means that it does not wait for input/output operations to complete before moving to the next task. Instead, it handles multiple connections concurrently, improving the overall performance and efficiency.
+
+
+
+!Single-Threaded:
+   Node.js runs on a single thread, but it employs an event loop that efficiently manages multiple concurrent requests. This makes it suitable for applications that require high scalability and responsiveness.
+
+
+! NPM (Node Package Manager):
+Node.js comes with NPM, a package manager that allows developers to easily install, manage, and share reusable code packages, known as modules. NPM provides access to a vast ecosystem of open-source libraries, frameworks, and tools.
+
+! Full-Stack JavaScript:
+With Node.js, you can use JavaScript for both front-end and back-end development, enabling developers to work with a unified language and codebase throughout the entire web application stack.
+
+!Microservices and APIs:
+Node.js is well-suited for building microservices-based architectures and developing RESTful APIs. It offers excellent support for handling HTTP requests, creating web servers, and interacting with databases, making it a popular choice for building scalable web applications.
+
+!Scalability and High Performance:
+Node.js is known for its ability to handle a large number of concurrent connections and perform well under heavy loads. Its event-driven and non-blocking nature allows for efficient resource utilization, making it highly scalable.
+
+!Community and Ecosystem:
+ Node.js has a vibrant and active community, which contributes to its continuous growth and improvement. It has an extensive ecosystem of modules and libraries, allowing developers to leverage existing solutions for various tasks.
+
+!Use Cases:
+Node.js is commonly used for building web servers, real-time applications, chat applications, streaming applications, APIs, IoT (Internet of Things) systems, and command-line tools. It has gained popularity among companies such as Netflix, PayPal, LinkedIn, and Uber due to its performance, scalability, and developer-friendly environment.
+
+
+
+
+
+
+
+
+
+Application - Up until 2009, javascript can only be run on browser, but now it can run outside of browser using nodejs.
+It opens lot's of tapplication of it.
+
+1. Traditional websites.
+2. Backend API's and services.
+3. Real time app like chat. whatsapp.
+4. Striming services - Netflix
+5. CLI tools.
+6. Multiplayer games.
+
+It allow use to build Complex and high performanceapp's.
+
+
+in nodejs library n github where source code is present we have 3 major folders.
+1. Deps folder.(dependencies) - this contain external code that nodejs requires to function properly.
+two main dependencies which is V8(crome js engine - without it no way Node know Js we write) and Uv - Libuv (open source lib) used by nodejs to work with OS file system and
+some deps are - v8, crypto, zlib, libuv.
+
+2. Src folder - It have C++ src code for nodejs runtime
+C++ features - fs, networking.
+
+3. Lib folder -> Nodejs adds new features to JS code using C++, in lib we have js code to easily access the c++ features.
+
+Lib have some Util functions that we can use to add functionality to our app
+
+
+Nodejs is = C++ + JS.
+
+Nodejs is not a language or framework, its runtime env which is used to execute JS code outside og browser build using js and C++, and build on V8 engine which contail lot's of components used to run JS code.
+Use v8 to provide of c++ also, hence fast.
+

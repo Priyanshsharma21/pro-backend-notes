@@ -1,0 +1,87 @@
+position: absolute:
+
+The position: absolute property allows you to position an element precisely within its closest positioned ancestor or the document itself.
+When an element is set to position: absolute, it is taken out of the normal document flow, meaning it doesn't affect the position of other elements.
+The position of an absolutely positioned element is determined by the top, right, bottom, and left properties. These properties specify the element's distance from the edges of its closest positioned ancestor or the document itself.
+Here's an example that positions a <div> element absolutely within a parent container:
+css
+Copy code
+.container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.absolute-element {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+html
+Copy code
+<div class="container">
+  <div class="absolute-element"></div>
+</div>
+In this example, the .container element is positioned relative to establish a containing block for the absolutely positioned .absolute-element. The .absolute-element is positioned 50 pixels from the top and left edges of the .container and has a red background.
+
+position: relative:
+
+The position: relative property positions an element relative to its normal position within the document flow.
+When an element is set to position: relative, it still occupies its original space in the document flow, but its position can be adjusted using the top, right, bottom, and left properties.
+Here's an example that demonstrates the usage of position: relative:
+css
+Copy code
+.relative-element {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+html
+Copy code
+<div class="relative-element"></div>
+In this example, the .relative-element is positioned 20 pixels from the top and left of its original position in the document flow. The element retains its space, and other elements flow around it.
+
+Both position: absolute and position: relative are powerful tools for precise element positioning. Understanding their differences and use cases allows you to create complex layouts and design effects in CSS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+position: fixed:
+
+The position: fixed property allows you to position an element relative to the browser window's viewport, regardless of scrolling.
+When an element is set to position: fixed, it is taken out of the normal document flow, similar to position: absolute.
+The position of a fixed element is determined by the top, right, bottom, and left properties, which specify its distance from the edges of the viewport.
+A fixed element remains fixed at its specified position, even when the user scrolls the page.
+Here's an example that demonstrates the usage of position: fixed:
+css
+Copy code
+.fixed-element {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+}
+html
+Copy code
+<div class="fixed-element"></div>
+In this example, the .fixed-element is positioned 20 pixels from the top and 20 pixels from the right of the viewport. It will remain fixed at this position even when the user scrolls the page.
+
+The position: fixed property is commonly used for elements such as navigation bars, sticky headers, or tooltips that need to remain in a specific position regardless of scrolling. It provides a way to create fixed-position elements that are not affected by the document flow or scrolling behavior.

@@ -1,0 +1,22 @@
+Streamm is a sequence of data moved from one point to another over time.
+Stream just allow us to work with chunks rather than large data.
+Ex - Stream of files moved from one computer to another computer.
+
+Work with data in chunks instead of wating for the entire data to be available at once.
+
+
+If we are transfaring content from file a to b you dont have to wait for entire file A content to be saved in temprory memnry before moving it into fileB.
+
+Instead content transfter in chunks.
+
+There are 4 types of streams - 
+Readable - From Which we can read data.
+Writable - To which we can write data.
+Duplex - Both Readable and Writable.
+Transform - Can Modify or transform data that is written and read.
+
+
+Reading.
+Writing,
+Socketss - Duplex
+File compression and de-compresion - transform

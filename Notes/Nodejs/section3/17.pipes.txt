@@ -1,0 +1,15 @@
+Pipe - A pipe which connects tank to kitchen sink.
+
+Pipe in Nodejs takes Readable stream and connects it to writable stream.
+
+
+const readableStream = fs.createReadStream("./demo.txt", {
+    encoding: "utf-8",
+    highWaterMark: 2 // now the size of buffer is 2 and it reads 2 byts at a time
+})
+
+const writableStream = fs.createWriteStream("./file2.txt");
+
+readableStream.pipe(writableStream)
+
+

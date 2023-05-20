@@ -1,0 +1,10 @@
+There are two ways to execute JS code - 
+1. REPL.
+Read Evaluate Print Loop.
+
+in terminal type node and now you can write nodejs code in cli.
+Node repl read the code, evaluate the result, print the resulkt and loops until is out of REPL
+
+2. Using Node filename.js
+or 
+node filename

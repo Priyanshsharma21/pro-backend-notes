@@ -1,0 +1,7 @@
+Browser - 
+In nrowser most of the time we are intracting with DOM or other web API's like cookies. We dont have that document, window and all other objects that are provided bt browser.
+
+In browser we dont have all te nice API's that nodejs provides through its modules, For example the filesystem access functionality.
+
+With Nodejs we control the enviroment...
+In browser user deside the enviroment.

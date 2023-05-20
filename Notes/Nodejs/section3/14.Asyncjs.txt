@@ -1,0 +1,28 @@
+JS is Sync, Blocking, Single threaded languange.
+
+Sync - Means Code executes top to bottom, left to right. One line at a time.
+If we havetwo function then it will execute 1st then secone.
+
+
+Blocking - Until one task completes it will not proceed to second task.
+
+Single Threaded - Thread(process) that JS programe use to run a task.
+Each thread can do one task at a time.
+
+Multi thread - Execute multiple task at a time.
+
+This model create lot's of problem.
+
+Ex - We are fetching data from database. Now our database is most probaible present in other continent or country. This can take lot's of time, even 10 sec is too much.
+And when this is completed then the next line executes. So we have to wait for this task.
+And we can't proceed other task until that.
+We want Non Blocking, and async behavious
+This is possible because of Nodejs and Browser in fe
+So Single JS is not enough for that. we need new pieces outside js to do this task.
+
+In Frontend Broweser comes into play. Backend Node comes into play.
+
+Web Browser and Nodejs allow us to make function that will be involked when something happens, some events. Not sync, async.
+
+Like when user click on something then something happens. setTimeout, setInterval, addEventListners, callback, promises,async-await.
+

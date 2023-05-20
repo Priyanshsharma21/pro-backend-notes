@@ -1,0 +1,20 @@
+
+Runtime refers to the period during which a program or script is executing or running. It is the phase when the code is being executed and the program is performing its tasks. The runtime environment provides the necessary infrastructure, libraries, and resources for the execution of a program.
+
+In the context of JavaScript, the runtime refers to the environment in which JavaScript code is executed. JavaScript can be executed in various runtime environments, including web browsers (like Chrome, Firefox, and Safari), server-side environments (like Node.js), and even mobile or desktop applications (using frameworks like React Native or Electron).
+
+During the runtime of a JavaScript program, the following activities take place:
+
+Parsing: The JavaScript code is parsed or analyzed by the JavaScript engine to understand its structure and grammar. This step involves tokenizing the code into individual units and building an abstract syntax tree (AST).
+
+Execution: The JavaScript engine then executes the code line by line, following the control flow of the program. It evaluates expressions, performs calculations, calls functions, and manipulates data according to the instructions provided in the code.
+
+Memory Allocation: The runtime environment allocates memory to store variables, objects, and data structures defined in the program. It manages the memory usage, allocation, and deallocation throughout the program's execution.
+
+Garbage Collection: In JavaScript, memory management is handled automatically through garbage collection. The runtime environment periodically identifies and releases memory that is no longer in use, freeing it up for future allocations. This process helps prevent memory leaks and ensures efficient memory utilization.
+
+Error Handling: During runtime, if an error occurs in the JavaScript code, the runtime environment catches and handles the error. It may display error messages in the console, halt the execution of the program, or trigger exception handling mechanisms if implemented.
+
+The runtime environment provides access to various APIs, libraries, and resources that enable JavaScript programs to interact with the environment they are running in. For example, in a web browser runtime, JavaScript can interact with the Document Object Model (DOM) to manipulate web page elements, handle user events, and make network requests.
+
+Remember, if you want to explore more about the runtime or have specific questions related to it, just let me know!

@@ -1,0 +1,34 @@
+Binary Data - 
+Computers store and represent data in binary format which is a collection of 0s and 1s. 
+00 01 10 11 100 101 110 111
+To work with data computer have to convert the data into binary representation.
+
+But How ? 
+
+Basic mathamatics - 
+Ex - 100 - 2^2 * 1 + 2^1 * 0 + 2^0 * 0 = 4
+
+String - 
+Computer convert char to number then number to binary.
+
+"V".chatCodeAt() - 86.
+
+CharacterSets - Char sets are predefine lists of characters represented by numbers.
+Popular char sets - Unicode and ASCII.
+
+
+On Unicode website we can see Chat and it's corrosponding Numbers.
+
+Char Encoding - 
+It state that How we can represent a chat as number so we can store it in binary in computer.
+It states how many bits to use to represent Number.
+
+- UTF-8
+8 - 8 Bytes.
+
+4 - 100 - 00000100
+V - 86 - 01010110
+
+Similar guidelines followto store images and videos in binary number.
+
+

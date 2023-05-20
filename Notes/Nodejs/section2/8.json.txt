@@ -1,0 +1,14 @@
+JSON - javascript object notation.
+A data interchange format commonly used with web servers.
+
+Like JS object but key is string.
+
+When you import a JSON file and use it then require will parse it to js object.
+
+JS will find js file first and then other like json or other.
+So use extention also.
+
+
+!Watchmode - It is like Nodemon.
+node --watch index.js - and whenver when we make chage and save then it will restart the server.
+

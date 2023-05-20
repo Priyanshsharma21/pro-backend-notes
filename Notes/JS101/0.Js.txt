@@ -1,0 +1,86 @@
+
+Definition of JavaScript:
+
+JS - 
+High level Language
+Intrepreted
+Single Threaded
+Syncronized
+Oops
+Scripting.
+JavaScript is a high-level, interpreted programming language that is primarily used for developing interactive web pages and web applications. It is a versatile scripting language that enables client-side behavior within a web browser. JavaScript allows developers to add dynamic elements, manipulate and modify content, respond to user interactions, and create interactive experiences on websites.
+
+Origins of JavaScript:
+JavaScript was created by Brendan Eich at Netscape Communications in 1995. Initially, it was developed under the name "Mocha" and later renamed to "LiveScript." Finally, it was renamed to JavaScript to capitalize on the popularity of Java at the time. JavaScript was designed to provide a lightweight, easy-to-use scripting language for web browsers, enabling web developers to enhance the interactivity of websites.
+
+
+Why JavaScript:
+JavaScript gained immense popularity due to its ability to add interactivity and dynamic features to web pages. It was one of the first scripting languages that could be executed directly within a web browser without requiring additional plugins. This made it accessible to a wide range of users. JavaScript's simplicity, versatility, and wide adoption across different web browsers contributed to its popularity and widespread use.
+
+Use and Applications of JavaScript:
+JavaScript has a wide range of applications and is predominantly used for client-side web development. Some common uses of JavaScript include:
+
+Dynamic Web Content: JavaScript allows developers to manipulate and modify web page content in real-time, enabling dynamic updates without requiring a page reload. It can be used to create interactive forms, validate user input, and dynamically change the appearance or behavior of elements on a page.
+
+Web Applications: JavaScript is the backbone of many web applications. It provides the ability to build complex client-side functionality, handle user interactions, and communicate with servers through asynchronous requests (AJAX). This enables the creation of interactive web applications such as social media platforms, online marketplaces, and productivity tools.
+
+User Interface Enhancements: JavaScript frameworks and libraries like React, Angular, and Vue.js are used to build rich and responsive user interfaces. These frameworks simplify the process of creating complex UI components, managing state, and handling user events.
+
+Browser APIs: JavaScript provides access to various browser APIs (Application Programming Interfaces) that allow developers to interact with the browser's features and capabilities. This includes manipulating the DOM (Document Object Model), handling browser events, working with cookies and local storage, making HTTP requests, and utilizing multimedia capabilities like audio and video playback.
+
+Server-Side Development: With the advent of Node.js, JavaScript can also be used for server-side development. Node.js enables developers to build scalable and high-performance server applications using JavaScript, making it possible to use the same language both on the client and server sides of a web application.
+
+Overall, JavaScript's versatility and widespread support have made it a fundamental technology for web development, allowing developers to create dynamic and interactive web experiences.
+
+
+
+
+
+Before JavaScript, web pages were largely static and limited in their interactivity. (Text + Images and show on web page)
+Limited options for adding interactivity to web pages, such as using HTML forms or client-side scripting languages like VBScript, but Limited capablities and not supported bya ll web browsers.
+In general, the web was a less dynamic and interactive place before the introduction of JavaScript. User interactions were limited, and web pages were not able to respond in real-time to user actions.
+
+With the introduction of JavaScript, web developers were able to add interactivity to their web pages and create more engaging and dynamic user experiences. This helped to pave the way for the modern web, which is now filled with dynamic, interactive, and responsive web applications.
+
+
+
+JavaScript was created by Brendan Eich in just 10 days in May 1995.
+At the time, Eich was working for Netscape Communications Corporation and was tasked with creating a scripting language that would be embedded in the Netscape Navigator web browser.
+
+The original goal of JavaScript was to provide a lightweight language that would allow web developers to add dynamic content and interactivity to their web pages. Before JavaScript, web pages were static and could only display text and images. JavaScript allowed web developers to create more dynamic and interactive web pages by enabling them to manipulate the Document Object Model (DOM) and respond to user actions.
+
+Eich's original design for JavaScript was heavily influenced by other programming languages, including C, Java, and Scheme. He wanted to create a language that was easy to learn and use, while also being powerful and flexible.
+
+
+
+Over the years, JavaScript has evolved and grown in popularity, and is now used not only for web development, but also for server-side development, desktop application development, and even mobile app development.
+
+
+
+
+
+1. Web 1.0: - User can come and read (Like Newspaper) - Suplex
+Web 1.0, also known as the "static web", was the early stage of the internet that started in the late 1980s and continued through the 1990s. During this period, most web pages were static and served mainly as online brochures or digital catalogs.
+Web 1.0 websites were mostly informational and lacked interactivity. There was very little user-generated content and online commerce was limited. Websites were mostly created by large organizations and were often difficult to update.
+
+Examples of Web 1.0 sites include the original versions of Yahoo and Amazon.
+
+2. Web 2.0: - Full Duplex - User intrection
+Web 2.0, also known as the "social web", emerged in the early 2000s and is characterized by the rise of social media, user-generated content, and interactive web applications.
+Web 2.0 introduced features such as user-generated content, social networking, and the ability to share information easily. Websites became more interactive and engaging, with features such as blogs, wikis, and social media platforms.
+
+Web 2.0 sites encouraged collaboration, user participation, and interactivity, which led to the growth of online communities and social networks.
+
+Examples of Web 2.0 sites include Facebook, Twitter, and Wikipedia.
+
+
+
+3. Web 3.0: - Now you have power on your data, like metaverse mai khudka khet or ghar. Our own NFT. And no one like even the admin can't do with our data. we have full power on our data.
+Web 3.0, also known as the "semantic web", is the next evolution of the web that is still emerging. It is characterized by a focus on machine learning, artificial intelligence, and data-driven applications.
+Web 3.0 is designed to be more intelligent, personalized, and responsive. It is built on top of Web 2.0 and aims to make the web more connected and seamless by enabling data to be shared and integrated more easily.
+
+Web 3.0 applications are designed to be more context-aware, meaning they can understand the meaning and relationships between data, which allows for more intelligent and personalized experiences.
+
+Examples of Web 3.0 sites include blockchain-based platforms, such as Ethereum, and AI-powered virtual assistants, such as Siri and Alexa.
+
+Overall, each evolution of the web has brought new features and capabilities, leading to more interactive and engaging online experiences.

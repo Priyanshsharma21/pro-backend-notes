@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>REVU</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+
+
+The <head> and <body> tags are two of the most important tags in HTML and are used to define the structure of a web page.
+
+The <head> tag is used to define the head section of an HTML document. This section contains information about the document that is not displayed on the page itself, but is used by the browser and search engines to understand and interpret the content of the page. Some common elements that can be included in the head section of an HTML document include:
+
+The <title> tag, which specifies the title of the page and is displayed in the browser's title bar.
+Meta tags, which provide information about the page such as keywords, description, and authorship.
+Links to external resources such as stylesheets, scripts, and other documents.
+The <body> tag is used to define the body section of an HTML document. This section contains the actual content that is displayed on the web page. Some common elements that can be included in the body section of an HTML document include:
+
+Headings and subheadings, which provide a hierarchical structure for the content of the page.
+Paragraphs, which contain text content.
+Lists, which group related items together.
+Images, videos, and other media content.
+Links to other pages or external resources.
+The <head> and <body> tags are both required in an HTML document, and must be included in the correct order. The <head> tag must come before the <body> tag, as it contains information that is required by the browser before the page content can be displayed.
+
+In summary, the <head> and <body> tags are two of the most important tags in HTML and are used to define the structure of a web page. The <head> tag is used to define the head section of the document, which contains information about the page that is not displayed on the page itself. The <body> tag is used to define the body section of the document, which contains the actual content that is displayed on the web pa

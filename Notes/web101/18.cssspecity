@@ -1,0 +1,17 @@
+CSS specificity is a way of determining which CSS rules apply to a particular element, based on the selectors used to target that element. In other words, it determines which CSS styles win out when there are conflicting rules applied to the same element.
+
+The specificity of a selector is calculated based on the number and types of selectors used to target an element. Here are the rules for calculating specificity:
+
+Type selectors, such as p or div, have a specificity of 0, 0, 1.
+Class selectors, such as .my-class, have a specificity of 0, 1, 0.
+ID selectors, such as #my-id, have a specificity of 1, 0, 0.
+Inline styles, which are styles applied directly to an element using the style attribute, have a specificity of 1, 0, 0, 0.
+The three values in the specificity calculation represent the number of ID selectors, class selectors, and type selectors used in the selector, respectively.
+
+When multiple selectors apply to the same element, the selector with the highest specificity value takes precedence. For example, a selector with a specificity of 1, 1, 0 will override a selector with a specificity of 0, 1, 1.
+
+If two selectors have the same specificity, the one that comes last in the CSS file will take precedence.
+
+It's important to understand specificity when writing CSS styles, especially when dealing with complex stylesheets. Using more specific selectors or adding inline styles can override other styles in unexpected ways, so it's generally best to avoid using them unless necessary.
+
+By understanding CSS specificity and following best practices for writing CSS, developers can create well-structured, maintainable stylesheets that apply styles consistently across an entire website or application.

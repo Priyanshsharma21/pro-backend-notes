@@ -1,0 +1,27 @@
+JS Runtime Enviroment - Bisically provides all th necessary components in order to use and run a Javascript program.
+
+Every browser has JS Engine
+
+Javascript engine is one component in JS RUntime.
+
+JS Runtime consist of following components.
+1. V8 engine.
+2. Web/Browser API's.
+3. Microtask Queue.
+4. Callback/Task Queue.
+
+
+Engine
+1. JS engine is v8 engine that execute JS code.
+2. it have Callstack where code execute and heap(memory) which contain all the variables that a JS programe needs
+
+
+
+Web API's
+1. API's are basically have DOM, Storage, Timer(set Interval,set timeout, promises, callbacks) this add additional functionality to js,all the apis been provide by browser.
+
+Queues
+1. Where all the async task been execute.
+2. Event loop ensure js tasks execute in right order.
+
+Engine can execute ECMA script but, Javascript is combination of all this APIS and components.

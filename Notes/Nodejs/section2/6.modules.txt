@@ -1,0 +1,160 @@
+A module is encapsulated and reusable chunk of code that has its own context.
+In nodejs each file is treated as seprate module.
+
+Types of mudules.
+1. Local Modules - Modules that we create in our application. - isLoggedIn.
+2. Built in modules - Modules that nodejs ships with out od the box. - Fs, OS, HTTP.
+3. Third party modules - Modules written by other developers that we can use in our application.
+
+
+!CommonJs - 
+It is a standard that states how a module should be structured and shared.
+Nodejs adoped common js when it started out and is what you will see in code bases.
+
+We use 
+
+import nameOfModule from '../app.js'
+
+and we can use export default nameOfModule from where we want to eport code.
+When index.js is executes then code inside the require module and its children will be executes.
+
+
+
+!Module Scope - 
+Every module has it's own scope - this is called IIFE.
+Immidiate involking function expression
+(function(){
+
+})
+
+
+Before module code is executed, nodejs wrap it inside function wrapper that provide module scope. this saves us from having worry about conflicting cariables or functions.
+
+
+Each module in nodejs wrapped inside IIFE, that provide private scope. this
+This allow use to repeat variable and function names
+
+
+
+
+
+
+!module Wrapper. IIFE
+Each module in nodejs wrapped inside the IIFE before being loded. It provide top level variable scoped.
+IIFE contain 5 parameters. 
+
+(function(message){
+    const superhero = "Batman"
+    console.log(superhero, message)
+})("hello")
+
+The parameters are - 
+
+(function(exports, require, module, __filename, __dirname){
+    const superhero = "Batman"
+    console.log(superhero, message)
+})("hello")
+
+When our execution starts we will see this file keywords in debugger.
+__dirname = String that represent current folder - "../src/controller"
+__filename = Steing represent file path - "../src/controller/user.js"
+require - use to import the module by path.
+module - refrence to current module.
+exports - refrence to export module.
+
+
+
+
+!module caching - 
+Take a scnario - 
+We have a class called superhero
+
+class SuperHero{
+    constructor(name){
+        this.name = name
+    }
+
+
+    getName(){
+        return this.name
+    }
+
+    setName(name){
+        this.name = name
+    }
+}
+
+export default new SuperHero("Batman")
+
+
+In index.js - 
+import SuperHero from './superhero'
+console.log(SuperHero.getName()) // Batman
+superHero.setName("supernam")
+console.log(superHero.getName()) // supernam
+
+import newSuperHero from './superhero'
+console.log(newSuperHero.getName()) // this will also give supernam but why, it's a nwe instance
+
+
+Reason - when you require or import the module then nodejs caches this module(remember this module).
+So next time you bring it back,nodejs remember it and bring the same object back, since object is pass by refrence hence we get same object and result back.
+
+Caching - Help to improve performance.
+Inside the require in debugger we can see cache.
+
+When nodejs see the module is already cached then it will not parse it again and run it directly.
+
+
+
+! type of import export - 
+
+we have name and default export - there should be one default export and we can have multiple name export.
+Name expirt should be import with same name and we can import default export with any name.
+
+
+in terms of require syntax we can use -
+Default  - module.exports and for name - module.exports
+
+
+
+
+
+Module.exports vs exports.
+
+In js when we assign as object which is non premitive means mortal dagta type then it points to same memory and hence change it will affect one.
+But when you assign new object to other like this . 
+
+let obj1 = {
+    name : "Priyansh Sharma"
+}
+
+let obj2 = obj1
+
+obj2 = {
+    name : "Shreyu"
+}
+
+Now the refrence is break and objw not pointing to obj1
+
+Now when you use modules.exports then it will work as expected.
+if you use only exports.add or exports.sub then below if you do somethong like - 
+
+const add = (a,b)=>{
+    return a + b
+}
+
+exports ={
+    add
+}
+
+then the refrence is broken
+
+
+
+
+Thats why we dont use exports and use module.exports because in exports the refrence is lost.
+
+Each files are treated as modult.
+we use require to import.
+

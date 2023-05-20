@@ -1,0 +1,82 @@
+Accessing before declearing is Hoisting
+
+Now in case of function we can call it before declearing it and it will work fine, also if you just console.log the function withour calling it iwll not give undefine but whole function.
+
+In var it will give undefine
+In let and const it will give error
+
+This is because in JS when execution context created then memory allocate to each and every variable and function and then code executes
+
+
+Now when we use arrow functions then it will take function call as variable and instead of storing the whole function it will allocate the undefine to it
+
+In JavaScript, hosting refers to the behavior of variable and function declarations being moved to the top of their respective scopes during the compilation phase. This concept can sometimes cause confusion, as it may appear that variables and functions are accessible before they are explicitly declared in the code.
+
+
+Variable Hosting:
+
+Variable declarations using the var keyword are hoisted to the top of their containing scope. However, only the declaration is hoisted, not the initialization.
+For example:
+javascript
+Copy code
+console.log(message); // Output: undefined
+var message = 'Hello!';
+console.log(message); // Output: Hello!
+In the above code, the variable message is hoisted, so the first console.log statement outputs undefined. The variable declaration is moved to the top, but the initialization occurs at its original position.
+Function Hosting:
+
+Function declarations are also hoisted to the top of their containing scope, allowing them to be called before their actual declaration in the code.
+For example:
+javascript
+Copy code
+greet(); // Output: Hello!
+
+function greet() {
+  console.log('Hello!');
+}
+In this code snippet, the greet function is hoisted, so it can be called before its actual declaration.
+However, it's important to note that hosting behaves differently for variables declared with let and const keywords, introduced in ECMAScript 2015 (ES6). Unlike var, these declarations are not hoisted to the top of their containing scope. Instead, they are hoisted to the top of the block scope (inside the nearest enclosing block), but remain in a "temporal dead zone" until they are formally declared. This means you cannot access or use the variables before their declarations.
+
+Here's an example showcasing the temporal dead zone behavior:
+
+javascript
+Copy code
+console.log(message); // Throws ReferenceError
+let message = 'Hello!';
+console.log(message); // Output: Hello!
+To avoid confusion and potential issues related to hosting, it is considered a best practice to declare variables at the top of their scope and avoid relying on implicit hoisting.
+
+If you have more questions or need further clarification, feel free to ask!
+
+
+
+
+
+
+
+
+
+
+Certainly! When it comes to const and let declarations, they behave slightly differently compared to var in terms of hosting and the temporal dead zone.
+
+Temporal Dead Zone (TDZ):
+
+With const and let, variables declared using these keywords are hoisted to the top of the block scope (the nearest enclosing block), but they remain in the temporal dead zone until their actual declaration.
+The temporal dead zone is the phase between the start of the block and the actual declaration of the variable, during which trying to access or use the variable will result in a ReferenceError.
+This behavior is designed to catch potential issues caused by accessing variables before they are declared and initialized.
+Hosting Behavior:
+
+Unlike var, which gets hoisted and initialized with a value of undefined, const and let declarations are not initialized during the hoisting process.
+This means that accessing const and let variables before their declaration in the code will result in a ReferenceError, rather than yielding undefined as with var.
+Here's an example to illustrate these concepts:
+
+javascript
+Copy code
+console.log(message); // Throws ReferenceError: Cannot access 'message' before initialization
+let message = 'Hello!';
+console.log(message); // Output: Hello!
+In this example, the first console.log statement throws a ReferenceError because message is in the temporal dead zone. The variable has been hoisted to the top of the block scope, but it hasn't been formally declared and initialized yet. The second console.log statement works as expected after the variable declaration.
+
+It's worth noting that the temporal dead zone behavior helps catch potential errors and promotes more explicit and predictable code. By enforcing variable declarations before usage, it encourages better coding practices and reduces the chances of accidentally accessing variables before they are ready to be used.
+
+If you have any further questions or need additional clarification, please let me know!

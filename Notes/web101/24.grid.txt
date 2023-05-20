@@ -1,0 +1,100 @@
+Certainly! CSS Grid is a powerful layout module that allows you to create complex grid-based layouts in a flexible and intuitive way. It provides a two-dimensional grid system, where you can define both rows and columns to position and align elements within a grid container. Here's a detailed explanation of CSS Grid with examples:
+
+To create a grid container, you set the display property of the parent element to grid. The child elements of the grid container become grid items. Let's explore the main concepts and properties of CSS Grid:
+
+Grid Template Columns (grid-template-columns):
+
+Defines the columns of the grid by specifying their size, width, or a combination of both.
+You can define columns using various units like pixels, percentages, or the fr unit to distribute available space proportionally.
+Example: grid-template-columns: 100px 200px 1fr.
+Grid Template Rows (grid-template-rows):
+
+Specifies the rows of the grid, similar to grid-template-columns.
+Example: grid-template-rows: 50px 1fr 100px.
+Grid Gap (grid-gap or gap):
+
+Sets the spacing between grid cells (both rows and columns) within the grid container.
+Example: grid-gap: 10px or gap: 10px (for both row and column gaps).
+Grid Area (grid-area):
+
+Assigns a grid item to a named grid area, allowing you to position it in specific areas of the grid.
+Example: grid-area: header or grid-area: 2 / 1 / 3 / 3 (using grid line numbers).
+Justify Items (justify-items):
+
+Specifies how grid items are aligned within their grid cells along the row axis.
+Possible values: start, end, center, stretch.
+Example: justify-items: center.
+Align Items (align-items):
+
+Determines how grid items are aligned within their grid cells along the column axis.
+Possible values: start, end, center, stretch.
+Example: align-items: center.
+Grid Template Areas (grid-template-areas):
+
+Defines named grid areas, allowing you to create complex layouts by referencing these named areas.
+
+Example:
+
+css
+Copy code
+grid-template-areas:
+  "header header"
+  "sidebar main"
+  "footer footer";
+In this example, we define a grid layout with three rows and two columns, and each grid item can be positioned using the named areas header, sidebar, main, and footer.
+
+Here's an example that demonstrates the usage of various CSS Grid properties:
+
+css
+Copy code
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100px 1fr 50px;
+  grid-gap: 10px;
+}
+
+.item {
+  grid-area: header;
+}
+html
+Copy code
+<div class="container">
+  <div class="item">Header</div>
+  <div class="item">Sidebar</div>
+  <div class="item">Main Content</div>
+  <div class="item">Footer</div>
+</div>
+In this example, the .container is a grid container with two columns and three rows. The .item with grid-area: header is positioned in the header area of the grid. The remaining items will be placed based on their order in the HTML markup.
+
+CSS Grid offers a flexible and powerful way to create
+
+complex layouts. By utilizing various Grid properties and techniques, you can achieve responsive designs, easily rearrange elements, and create visually appealing grid-based structures.
+
+
+
+
+
+
+
+
+Let say we have container - make it display grid
+Now this contailer have child which we call items
+So in parent where we give display grid we can write grid-template-row and column and specify number of rows and columns we need like - 
+
+grid-template-row : 133px 133px 133px; this will make 3 rows with this size
+
+we can write row-gap and column-gap to specify the spae b/w
+
+we can use repeart and fr - 
+grid-template-row : repeat(3, 1fr) - 3 by 3 ke grid bana do - fr bole to fraction
+
+
+Now we can target particular item and tell it how many lines it should cover - 
+Like 
+grid-col-start  : 1
+grid-col-end : 3
+it will span to it
+
+
+in parent we can specify justify-items start end
