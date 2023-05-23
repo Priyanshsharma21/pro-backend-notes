@@ -1,0 +1,13 @@
+Libuv - 
+
+What - 
+Libuv is cross platform open source library written in C languange.
+
+
+Why - 
+It handles Async, Non I/O blocking Operations in nodejs.
+
+How ? 
+ Using two features - Thread Pool and Event Loop.
+
+Thread Pool - 

@@ -1,0 +1,137 @@
+Package.json",
+
+What -
+Package.json is npm configuration file.
+
+It is a json file that lives in the root dir of your packages and holds various metafata relevant to the package.
+
+Why -
+its a central place to configure and describe how to intract and run your package.
+Use by npm CLI.
+
+
+using npm init -y we can initlize the node application.
+
+
+For eample I wrote the code - 
+
+
+const greet = (name)=>{
+    console.log(`My Name is ${name}, Nice to meet you`)
+}
+
+export default greet
+
+Now I want to publish it to npm.
+
+So make package.json file in root and then it should contain few informations like - 
+{
+    "name" : "greet",
+    "version" : "1.0.0",
+    "description" : "A package to greet us",
+    "main" : "index.js",
+    "keywords" : ["Javascript","devdose"],
+    "author" : "devdose",
+    "license" : "ISC",
+}
+
+
+
+we can use npm init --yes - this will initlize node app with default values.
+
+When we install the package we looks fr few things - 
+
+1. downloades.
+2. Certified(license) or Fake. - can lead to hacking.
+3. Size - If i install any package then the project size also increase.
+4. good docs is must.
+
+
+when we install any package then inside the package.json we will see dependencire object inside wihcn we can see package name and its version number.
+
+Package.lock.json is made when you install your first dependency and this also have package name and version, this file keep track of the packages and maintain the consistency.
+
+In future if package is updates o any module is depricated then it tells us about it.
+
+
+
+
+!Depedency - The dependency object contain te packages in bug project we are working with like 50 packages so this keeps track on that.
+
+This packages present in node_modules which have byts of predefine buildin modules as well as third party packages also.
+
+When we push our code to guthub then we dont puch node_module.
+
+If we are using any dependency and not installed then it gives us error.
+
+When we have 50 dependencirs in depedncy object in package.json then we can use npm install and it will scan the object and doanlod them.
+
+
+
+
+
+!Versioning -
+npm i always install latest package.json
+we can install specific version by.
+
+npm i lodash@12.2.4  - this cones in handy when latest version has bug.
+
+Why version number is 3 digit with . seprared.
+Because NPM adop sementic versioning.
+
+Semver - Widly adopted versioning system.
+Comtain sets of rules and requirements that decide how version numbers are assigned and increase.
+
+Today new pacgas created every day.
+It is crucial to keep track of this.
+
+How it works - 
+
+
+x.Y.Z
+
+X - Major version.
+y - Minor version.
+Z - Patch.
+
+2.0.2
+
+How to increment it - When we fix any bug and the code stays backward compitable we ncrease patch version.
+ex - 1.1.2 - 1.1.3
+
+When we add new functionality but code still stays backward-compitable, we increase the minor version.
+and reset the patch to 0
+ex - 1.1.1 - 1.2.0
+
+When you make chage and code is not backward compitable we increase major and minor and patch is reset to 0.
+
+ex - 1.1.1 - 2.0.0
+
+
+When forst version is made then it always starts with 0.1.0.
+initial - 0.Y.Z
+when code in production then - 1.0.0
+
+
+
+
+
+
+!npm scripts.
+
+Way to bundell common commands use in a project.
+They are typically entered in command like in order to do womething woth application.
+Stored in package.json file. and has access to everyone.
+
+Ex-> building projct, starting dev server, compiling css, liniting, minifing...
+ex - npm run script_name.js
+Ex - npm start, npm run dev
+
+
+
+! how to publish a package to npm.
+
+Make account on npm.
+Now in CLI run - npm adduser <username>
+then it will ask you email,password and OTP.
+and then run npm publish

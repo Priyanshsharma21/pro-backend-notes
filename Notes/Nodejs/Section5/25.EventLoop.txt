@@ -1,0 +1,122 @@
+Recap - JS is sync, Blocking, single threaded language.
+
+To make Async Programming Possible, we need the help of libuv. 
+
+So How Code Is Executes - 
+
+1. We have V8 engine contail - Memory Heap and Call Stack.
+2. When we allocate variables and functions then memory is allocated in heap.
+3. When we execute code then functions are puched in call stack. and when returns then pop off the call stack.
+4. On right we have libuv - when we execute async methods then it is offloaded to libuv.
+5. Libuv then runs the task using native async mechanism of OS, and if that's not possible then it uses it's thread Pool to execute task so main thread is not block.
+
+
+
+!Scanario 1 - Sync operation.
+
+console.log("First")
+console.log("Second")
+console.log("Third")
+
+
+1. Global Execution context is created and pushed into call stack.
+1.1 It have memory component and code component. In memory component value is assigned with undefine and function with whole function as it is. when function call and local execution contect created then it pushed into call stack.
+
+2. We have console.log("First") so it is pushed into stack - 1ms
+3. Then is is poped from stack and in consile we see First.
+4. console.log("Second") - executed - 1ms - second print in console. poped from call stack.
+5. console.log("Third") - executed - 1ms - third print in console. poped from call stack.
+
+
+
+
+
+! Scanario 2 - Async Call.
+
+console.log("First")
+
+fs.readFile(__dirname, ()=>{
+    console.log("Second)
+})
+
+console.log("Third")
+
+
+1. Global execution created - pushed in call stack.
+2. Execution cones to line 1 - console.log() pusned into stack. first printed in console. takes 1ms.
+and then popped out.
+3. execution comes to 2. - fs.readFile comes to call stack - see it's a async operation. it get's poped out of call stack and given to libuv.
+4. In bg libuv starts to read file content and execute it in seprate thead.
+5. Now execution on line 5 - console.log() - third pront to console and popped of call stack.
+call stack is empty.
+6. Now let's say after 4 ms the task is completed by libuv and popped of libuv and given to call stack and inside the callback of it we will see second printed and then function is popped of.
+7. No more code ti run to global also popped off.
+
+
+Now the event loop sits at core of libuv.
+
+Event Loop is Just a C programe - 
+Event loop is design pattern that coordinated the execution of sync and async code in nodejs.
+
+1. Event loop is a loop that is alive until our nodejs app is running
+
+2. In this we have 6 different queues. Each queue contain callback function that evantually execute in call stack.
+
+3. First we have timer queue - this contain callback assicoate with setTimeput and setInterval.
+4. Second we have IO queue - this contain callback for all the async methods like - FS and HTTP.
+5. check queue - this contain callback for setImmediate.
+6. Close Quueu - Callback associate with close events on
+7. Micro centers - contain two queues - 1. Next tick queue which contain callback assicoate with next tick and then we have promise quque which have callback associate with promises.
+
+
+Note - Timer, IO, Check and Close are part of Libbuv.
+Microqueue are not part of Libuv.
+
+
+Execution Order - 
+1. Sync code takes priority over async code that runtime like to execute. Means when call stack is empty ten only event loop comes into picture.
+
+order - 
+1. Task in microTask queue is executes, 1. nextTick and then promise queue.
+2. All callbacked in timer queue are executes.
+3. Now again Task in microTask queue is executes if any, 1. nextTick and then promise queue.
+4. Now task in IO is executes
+5. Now again Task in microTask queue is executes if any, 1. nextTick and then promise queue.
+6. All callback in check queue is executes.
+7. Now again Task in microTask queue is executes if any, 1. nextTick and then promise queue.
+8. Callback in close queue executed
+9. Now again Task in microTask queue is executes if any, 1. nextTick and then promise queue.
+
+If there are more callback then this procss is executes again.
+If no more code to execute then event loop exits immediately
+
+
+
+Q - Whenever any task is completed in libuv, at what point does node decide to run the assicoate callback function on call stack.
+Ans - Callback function are executed only when the call stack is empty. The normal flow of the execution will not be intruped to run a callback function.
+
+
+Q - What about asuync methods like setTimeout and internal which alsi delay the exection of callback function.
+ - SetTimeout and interval callbacked are giben first priority.
+
+Q -If two async complete at same time then which will come first in call stack.
+ - Timer callbacks executes before IO even both are ready at same time.
+
+
+
+
+Initial execution: When your Node.js application starts, the main script is executed synchronously. Sync code is executed directly in the call stack, and the control flow moves to the next line of code once the current line has completed.
+
+Asynchronous code encounter: When Node.js encounters asynchronous code (such as I/O operations or timers), it doesn't block the execution of the remaining code. Instead, it offloads the asynchronous code to the appropriate browser API or internal system API.
+
+Callback registration: When the asynchronous operation is sent to the browser API or system API, a callback function is registered to be called once the operation is completed.
+
+Event loop: While the asynchronous operation is being processed by the browser API or system API, Node.js doesn't wait for it to complete. Instead, it continues executing the remaining synchronous code.
+
+Execution of sync code: Node.js executes the synchronous code block by block, line by line, until there is no more synchronous code remaining in the call stack.
+
+Event loop checks: Once the call stack is empty and all synchronous code has been executed, the event loop checks if there are any completed asynchronous operations with registered callback functions.
+
+Execution of async callbacks: If there are completed asynchronous operations, the event loop picks up the corresponding callback functions and pushes them onto the call stack. These callback functions are then executed, and any necessary data processing or printing of results occurs.
+
+Repetition: The event loop continues this process, repeatedly checking for completed asynchronous operations and executing their respective callbacks until there are no more pending asynchronous operations.

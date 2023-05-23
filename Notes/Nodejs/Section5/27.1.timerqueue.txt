@@ -1,0 +1,7 @@
+We can use set timeout and set interval in otder to execute the timer queue and
+
+setTimeout(()=>{
+
+},3000)
+
+Code in microtask queue executes before timer queue.

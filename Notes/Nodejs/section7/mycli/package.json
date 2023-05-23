@@ -1,0 +1,15 @@
+{
+  "name": "devpriyansh-pokipal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "bin":{
+    "devpriyansh-pokipal" : "inedx.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,21 @@
+Our Micro Queue consist of - 
+1. nextTick queue - which contain process.nectTick callback.
+2. promise Queue - which contain promise callbacks.
+
+
+
+How to add functions into microtask queue - 
+
+
+1. nextTick
+process.nextTick(()=>{
+    console.log("This is Process.nextTick")
+})
+
+
+
+2. Promise
+
+Promise.resolve().then(()=>{
+        console.log("Proise")
+})

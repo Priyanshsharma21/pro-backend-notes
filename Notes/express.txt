@@ -1,27 +1,27 @@
 Introduction to Express.js
 
-Understanding Node.js and Express.js
-Setting up a basic Express.js application
-Creating and running a server
+Understanding Node.js and Express.js - done
+Setting up a basic Express.js application - done
+Creating and running a server - done
 Routing
 
-Handling different HTTP methods (GET, POST, PUT, DELETE)
-Defining routes and route parameters
-Implementing route handlers and middleware functions
-Routing with Express Router
-Request and Response Handling
+Handling different HTTP methods (GET, POST, PUT, DELETE) - done
+Defining routes and route parameters - done
+Implementing route handlers and middleware functions - done
+Routing with Express Router - done
+Request and Response Handling - done
 
-Accessing request data (query parameters, body, headers)
-Sending different types of responses (JSON, HTML, files)
-Handling errors and sending error responses
-Middleware
+Accessing request data (query parameters, body, headers) - done
+Sending different types of responses (JSON, HTML, files) - done
+Handling errors and sending error responses - done
+Middleware - done
 
-Introduction to middleware
-Writing custom middleware functions
-Implementing third-party middleware (body-parser, morgan, etc.)
-Order of middleware execution
-Error handling middleware
-Templating Engines
+Introduction to middleware - done
+Writing custom middleware functions - done
+Implementing third-party middleware (body-parser, morgan, etc.) - done
+Order of middleware execution - done
+Error handling middleware - done
+Templating Engines - done
 
 Introduction to templating engines (EJS, Pug, Handlebars)
 Integrating a templating engine in Express.js

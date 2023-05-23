@@ -1,0 +1,108 @@
+To Setup basic express application we can use CLI - run npm init --yes - to initlize node application.
+
+Then Install express usinf npm i express - Inside the dependency we can see express is installed.
+
+
+Now inside the root file - index we can import express from 'express'.
+
+initlize express  = const app = express()
+
+
+then we can use app.use to define middlewares and also we can use - app.listen(PORT, ()=>{
+    console.log("Server started.)
+});
+
+
+
+To set up a basic Express.js application, you'll need to follow these steps:
+
+!Step 1:
+Initialize a new Node.js project
+
+Open your terminal or command prompt.
+Create a new directory for your project and navigate into it using the cd command.
+Run the following command to initialize a new Node.js project:
+csharp
+Copy code
+npm init -y
+This will create a new package.json file in your project directory.
+
+
+!Step 2:
+Install Express
+
+In the same terminal or command prompt, run the following command to install Express as a dependency for your project:
+Copy code
+npm install express
+This will download and install Express in your project, and it will be added to the dependencies section of your package.json file.
+
+
+
+
+
+!Step 3:
+Create an entry file
+
+Create a new file in your project directory (e.g., index.js or app.js) and open it in a code editor.
+Import the Express module at the top of the file:
+javascript
+Copy code
+const express = require('express');
+Create an instance of the Express application:
+javascript
+Copy code
+const app = express();
+
+
+
+
+
+!Step 4:
+Define routes and middleware
+
+You can define routes using the various HTTP methods (GET, POST, PUT, DELETE, etc.) provided by Express.
+For example, to create a simple "Hello, World!" route, you can add the following code:
+javascript
+Copy code
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+This creates a route handler for the root URL (/) that responds with the "Hello, World!" message when accessed via a GET request.
+You can also add middleware functions to perform tasks like parsing request bodies, handling errors, or serving static files.
+For example, to add a middleware that logs the requested URL for every incoming request, you can add the following code:
+javascript
+Copy code
+app.use((req, res, next) => {
+  console.log(`Requested URL: ${req.url}`);
+  next();
+});
+
+
+
+
+
+!Step 5:
+Start the server
+
+At the end of your entry file, add the following code to start the server and listen for incoming requests:
+javascript
+Copy code
+const port = 3000; // or any port number you prefer
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
+
+
+
+!Step 6:
+Run the server
+
+In your terminal or command prompt, navigate to your project directory.
+Run the following command to start your Express server:
+Copy code
+node index.js
+If everything is set up correctly, you should see a message indicating that the server is running on the specified port.
+Congratulations! You have created and run a basic Express.js server. You can now access your routes by visiting http://localhost:3000 (assuming you chose port 3000). Feel free to modify and expand your application as needed.

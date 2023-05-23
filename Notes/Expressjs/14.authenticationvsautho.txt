@@ -1,0 +1,177 @@
+Auth and Authn are two things we use in our application of any domain.
+
+Authentication - It means verifing the identity of the user wethere user is preset in our database or not before granting them the resources.
+We use it using JWT token - which is web secure way of transfaring the information.
+
+!User Registration:
+The authentication process typically begins with user registration. During registration, users provide their credentials, such as username/email and password. The application securely stores these credentials, often by hashing and salting the passwords, to protect user data.
+
+app.post('/register', (req, res) => {
+  const { username, password } = req.body;
+  * Store the user in the database (with password hashing)
+  * Replace this with your own logic to store user data
+  res.json({ message: 'User registered successfully' });
+});
+
+
+!Login:
+Once registered, users can log in to the application by providing their credentials. The login process verifies the provided credentials against the stored credentials. If the credentials match, the user is considered authenticated and granted access to protected resources.
+
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  * Verify username and password against the stored credentials in the database
+  * Replace this with your own logic to verify user credentials
+
+  * If credentials are valid, generate a token
+  const token = jwt.sign({ username }, 'secret-key');
+  res.json({ token });
+});
+
+
+
+
+!Sessions and Cookies:
+To maintain authentication state across requests, web applications often use sessions and cookies. Upon successful login, a session is created on the server, and a unique session identifier is stored in a cookie on the client-side. The cookie is sent with subsequent requests, allowing the server to identify and validate the session.
+
+
+
+!Token-based Authentication:
+An alternative approach to session-based authentication is token-based authentication. Instead of sessions and cookies, tokens are used to authenticate requests. Tokens are typically JSON Web Tokens (JWT) or similar mechanisms. Upon successful login, the server generates a token, signs it with a secret key, and sends it to the client. The client includes the token in subsequent requests for authentication.
+We can use localstorage or cookie to store the token generated from JWT with some expiry date. 
+On every request we send from client like from react we use to send this token inside the header and in middleware we identify this user is Authorized or not.
+
+
+!Middleware for Authentication:
+In Express, authentication is often implemented using middleware functions. These middleware functions are placed in the request-response cycle and run before the actual route handlers. They validate the user's authentication status before allowing access to protected routes. If the user is not authenticated, the middleware can redirect them to the login page or send an appropriate error response.
+
+const authenticateToken = async(req, res, next) => {
+  const token = req.headers.authorization;
+  if (!token) {
+    return res.status(401).json({ message: 'No token provided' });
+  }
+
+  * Verify the token
+  const decode = jwt.verify(token, 'secret-key')
+  const user = await UserModel.findById({decode._id})
+
+  if(!user) res.statue(404).json({message : "No User found", success : false})
+
+    req.user = decoded.username;
+    next();
+  });
+};
+
+
+and now we can get a res - if success = false then we will tell user to login first.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!Authorization - 
+
+You have a blogging platform where users can create and manage their blog posts. However, you want to restrict certain actions, such as editing or deleting a blog post, to only the authorized users who created the post.
+
+
+!User Roles and Permissions:
+To implement authorization, you can assign roles and permissions to users. Roles define the user's level of access, while permissions specify the actions they can perform.
+
+const user = {
+  id: 1,
+  username: 'john',
+  role: 'admin',
+  permissions: ['create', 'edit', 'delete'],
+};
+
+
+!Authorization Middleware:
+Create an authorization middleware that checks if the user has the required role and permissions to perform a specific action. This middleware can be applied to routes that require authorization.
+
+
+const authorize = (requiredRole, requiredPermissions) => {
+  return (req, res, next) => {
+    *Check if user is authenticated and has required role
+    if (req.user && req.user.role === requiredRole) {
+      *Check if user has required permissions
+      const hasPermissions = requiredPermissions.every((permission) =>
+        req.user.permissions.includes(permission)
+      );
+      if (hasPermissions) {
+        *User is authorized, proceed to the next middleware or route handler
+        return next();
+      }
+    }
+
+    *User is not authorized, send an error response
+    res.status(403).json({ message: 'Access denied' });
+  };
+};
+
+*Example usage of authorization middleware
+app.delete('/posts/:postId', authorize('admin', ['delete']), (req, res) => {
+  *Delete the blog post
+  const postId = req.params.postId;
+  *Delete the post from the database
+  *Replace this with your own logic to delete the post
+
+  res.json({ message: `Post with ID ${postId} deleted successfully` });
+});
+
+
+
+
+
+
+
+
+!Authentication and Authorization Combination:
+To implement authorization, you typically combine it with authentication. Users need to authenticate first, and then their roles and permissions are checked for authorization.
+
+
+
+const authenticate = (req, res, next) => {
+  * Check if user is authenticated (e.g., using tokens, sessions, etc.)
+  * Replace this with your own logic to authenticate the user
+
+  * Set the authenticated user on the request object
+  req.user = user; // Assuming user is authenticated and retrieved from the database
+  next();
+};
+
+* Apply authentication and authorization middleware to routes
+app.post('/posts', authenticate, authorize('admin', ['create']), (req, res) => {
+  * Create a new blog post
+  * Accessible only by an authenticated user with admin role and create permission
+  const { title, content } = req.body;
+  * Create the post in the database
+  * Replace this with your own logic to create the post
+
+  res.json({ message: 'Post created successfully' });
+});
+In this example, the authenticate middleware is applied first to verify the user's authentication. If the user is authenticated, the authorize middleware is applied to check if they have the required role and permissions.
+
+By combining authentication and authorization, you can control access to specific routes or actions based on the user's roles and permissions.
+
+Remember to customize the authorization logic to fit your specific application's requirements and user management system.
+
+Feel free to ask if you have any further questions or if there's anything specific you'd like to learn about authorization!
+
+
+
+
+
+

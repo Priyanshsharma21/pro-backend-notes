@@ -1,0 +1,9 @@
+Now In Enterprise level application this is now how we use to handle req and res,this in nodejs is low level way of doing and making server. instead we rely on Framwwork.
+
+Framework simply abstract the lower level code allowing you to focus on the requirements that code itself.
+
+Ex - Angular, Vue and React - Framework/Libraries that help you build UI without reluy on lower level Dom API in js
+
+Framework to make server is - Express, nest, Hapi, Koa, Sail, Fastify
+
+This are build on http module and help you to give all the features without knowing the things happing behind the seanes

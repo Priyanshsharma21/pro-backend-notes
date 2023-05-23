@@ -1,0 +1,30 @@
+!Nodejs Runtime
+Is an enviroment which provide us all the necessary components in order to use and run js oursode the browser.
+
+It contain 3 components - 
+Dependencies - Libuv, zlib, crypto, V8 etc. that nodejs require for functioning.
+c/c++ features - networking and OS and filesystem.
+JS library - That are Javascript function and utilities to tab into C++ features in javascript code which uses V8 engine.
+
+
+
+!Asyncronous JS
+
+JS is default 
+
+Sync - Code executes top to bottom line by line inparticular pattern.
+ 
+Blocking - because sync hence blocking, do not move to next task until one complete.
+
+Singlethreaded - Thread is a process js use to run a task.
+In js we have one thread called main thread to execute the code.
+
+
+
+!Async Methods.
+Methods like Fs - readFile, http - creatSServer to understand we need something outsode of browser.
+In bacnend we have nodes and in nodejs we have deps called Libuv.
+
+
+
+

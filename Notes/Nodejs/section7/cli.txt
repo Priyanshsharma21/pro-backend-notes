@@ -1,0 +1,11 @@
+CLI - It is a command line interface.
+programe that you can run from terminal.
+
+ex - npm and git.
+
+
+1 to convert a package to CLI it require 2 things.
+1.index.js we add the
+#!/usr/bin/env node
+
+this is hashbang - this tells which interpreter to ue to OS
