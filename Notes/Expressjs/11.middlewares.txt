@@ -1,0 +1,56 @@
+Middlewares in Express.js are functions that have access to the request (req) and response (res) objects in the application's request-response cycle. They can perform various tasks such as modifying request/response objects, executing additional code, handling errors, or implementing authentication and authorization checks. Middlewares are essential for extending and enhancing the functionality of Express applications.
+
+Basic Middleware Example:
+A middleware function in Express is a function that takes three arguments: req, res, and next. It can perform operations on the req and res objects and then call next() to pass control to the next middleware in the stack. Here's a basic example of a middleware function that logs the request method and URL:
+
+----------------------------------------------------------------
+const express = require('express');
+const app = express();
+
+! Middleware function
+const loggerMiddleware = (req, res, next) => {
+  console.log(`Request Method: ${req.method}`);
+  console.log(`Request URL: ${req.url}`);
+  next(); // Pass control to the next middleware
+};
+
+! Apply middleware to all routes
+app.use(loggerMiddleware);
+
+! Route handler
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+-----------------------------------------\
+
+
+
+
+
+Types of Middlewares:
+
+!Application-Level Middleware:
+These middlewares are defined at the application level using app.use() or app.METHOD(). They are executed for every request to the application. Common use cases include logging, parsing request bodies, or setting up authentication/authorization.
+
+!Router-Level Middleware:
+These middlewares are defined on specific router instances using router.use() or router.METHOD(). They are executed for every request to the specific router. Router-level middlewares are useful for handling specific routes or applying common functionality to a group of routes.
+
+!Error Handling Middleware:
+These middlewares are defined with four arguments (err, req, res, next) and are used to handle errors that occur during the request-response cycle. They can be defined at the application level or on specific routers. Error handling middlewares are typically defined after all other middlewares and routes.
+ITS LIKE WE CAN we can check if the user exist in database before going into controller and if user not exist then we can throw error.
+using new Error
+!Third-Party Middleware:
+Express allows integration with third-party middleware libraries that provide additional functionality. Examples include body-parser for parsing request bodies, cookie-parser for handling cookies, and helmet for adding security headers.
+
+!Built-In Middleware:
+Express provides some built-in middlewares that can be used by simply invoking app.use() or app.METHOD(). Examples include express.static() for serving static files and express.json() for parsing JSON data.
+
+Middleware functions can be composed and chained together, allowing you to create powerful and flexible request processing pipelines in Express.
+
+It's important to note that the order in which middlewares are defined matters, as they are executed in the order they are added. Also, middleware can be conditionally applied based on specific routes, HTTP methods, or other conditions using appropriate middleware functions.
+
+These middlewares enhance the expressivity, flexibility, and extensibility of Express applications, making it easier to handle common tasks and implement advanced functionalities.

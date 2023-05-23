@@ -1,0 +1,24 @@
+What is NPM - 
+Npm is .
+1. World largest Software Library.
+2. Its software package manager.
+
+Like - Book library contain books by different authors.
+
+Similary NPM is a library which contain code packages written by various developers.
+
+It is a large public database of javascript code that developers from all over the world can use to share and borrow code.
+
+we can publish our package to npm and also can use others package using npm.
+
+On npmjs.com we can see all the packages.
+
+We have access to command line interface tool using which we can access the packahges.
+
+Other package manager - We have yarn - npm is default.
+
+npm means - Package manager for JS language.
+
+To build big enterprie project we need code eritten by others and hence npm is best.
+
+

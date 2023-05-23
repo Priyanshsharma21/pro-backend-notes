@@ -23,3 +23,6 @@ for(let i=0; i<20000000; i++){}
 
 // Note - IO events are polled and callback functions are addesd to IO queue only after the IO is completed.
 
+// 1. Micro Task Queue executes, then Timer then Goes to IO but there is nothing, Goes to polling - there it completed read file operation and callback fucton pushed to IO queue., event loop goes to check queue which is empty right now.
+
+// 2. Secnd iteration

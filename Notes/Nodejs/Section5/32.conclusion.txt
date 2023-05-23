@@ -1,0 +1,24 @@
+Event loop is a C programe that coordinated then execution of sync and asunc code in nodejs.
+
+It coordinated the execution in 6 different queues.
+1. NextTick - process.nextTick(()=>console.log('nexttick'))
+2. Promise - Promise.resolve().then(()=>console.log('Promise')) or Reject
+Note - nexttick and Promise Combine call micro task queue
+3. Timer. setTimeout(()=>console.log('Timer'),0)
+4. I/O. - fs.readFile(__dirname,()=>console.log("File Read"))
+5. Check. - setImmediate(()=>console.log('Check Queue'))
+6. Close. -  attach close event listner to work with close queue.
+
+const readableStream = fs.createReadStream(__filename)
+readableStream.close()
+
+
+readableStream.on("close", () => {
+    console.log("This is from readable Stream close event callback")
+})
+
+
+
+
+The order follows same listed. But,
+Next Tick and Promise are executed in betwen each queue and also in between each callback execution b/w timer and check queue
